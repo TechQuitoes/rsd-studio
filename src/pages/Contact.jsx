@@ -1,12 +1,30 @@
 import { useState, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { Link } from 'react-router-dom';
+
+import { useTheme } from '../context/ThemeContext';
 
 const THEMES = {
-  cream: { bg: '#f4f0ea', text: '#111111', muted: '#5e5e5c', border: 'rgba(0,0,0,0.12)' },
-  green: { bg: '#0a1f16', text: '#ffffff', muted: '#b2c2ba', border: 'rgba(255,255,255,0.15)' },
-  black: { bg: '#080808', text: '#ffffff', muted: '#888888', border: 'rgba(255,255,255,0.15)' },
+  '#0a1f16': {
+    bg: '#0a1f16',
+    text: '#ffffff',
+    muted: '#ffffff',
+    border: '#ffffff',
+  },
+
+  '#1a0f2b': {
+    bg: '#1a0f2b',
+    text: '#ffffff',
+    muted: '#c8bfdc',
+    border: 'rgba(255,255,255,0.15)',
+  },
+
+  '#080808': {
+    bg: '#080808',
+    text: '#ffffff',
+    muted: '#888888',
+    border: 'rgba(255,255,255,0.15)',
+  },
 };
 
 const CALENDAR_DAYS = [
@@ -123,14 +141,14 @@ function FloatingLabel({ id, label, type = 'text', required = false, textArea = 
 }
 
 export default function Contact() {
-  const [theme, setTheme] = useState('cream');
+  const { theme } = useTheme();
   const [selectedDay, setSelectedDay] = useState('01');
   const [selectedTime, setSelectedTime] = useState('10:30 AM');
   const [inquiryType, setInquiryType] = useState('project');
   const [submitted, setSubmitted] = useState(false);
 
   const containerRef = useRef(null);
-  const t = THEMES[theme];
+  const t = THEMES[theme] || THEMES['#0a1f16'];
 
   useGSAP(() => {
     gsap.to('#dirPane',   { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' });
@@ -165,11 +183,11 @@ export default function Contact() {
             rel="noopener noreferrer"
             aria-label={icon.name}
             className="block w-5 h-5 transition-all duration-300 hover:scale-[1.12]"
-            style={{ color: theme === 'cream' ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.45)' }}
+            style={{ color: theme === '#f4f0ea'? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.45)' }}
             onMouseEnter={e => (e.currentTarget.style.color = '#c5a880')}
             onMouseLeave={e =>
               (e.currentTarget.style.color =
-                theme === 'cream' ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.45)')
+                theme === '#f4f0ea' ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.45)')
             }
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
@@ -195,62 +213,7 @@ export default function Contact() {
       </a>
 
       {/* ── TOP NAV ── */}
-      <nav
-        className="fixed top-0 left-0 w-full flex justify-between items-center z-[100] transition-all duration-500"
-        style={{
-          padding: 'clamp(16px, 3vw, 30px) clamp(16px, 4vw, 40px)',
-          backdropFilter: 'blur(15px)',
-          WebkitBackdropFilter: 'blur(15px)',
-          borderBottom: `1px solid ${t.border}`,
-        }}
-      >
-        <Link
-          to="/"
-          className="text-[12px] uppercase font-bold no-underline transition-colors duration-500"
-          style={{ letterSpacing: '0.25em', color: t.text }}
-        >
-          {/* Shorten on small screens */}
-          <span className="hidden sm:inline">Rakesh Sharma Designs</span>
-          <span className="inline sm:hidden">RSD</span>
-        </Link>
-
-        {/* Social icons on mobile (since the side dock is hidden) */}
-        <div className="flex items-center gap-4 lg:hidden">
-          {SOCIAL_ICONS.slice(0, 3).map(icon => (
-            <a
-              key={icon.name}
-              href="https://www.instagram.com/rakeshsharmadesigns/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={icon.name}
-              className="block w-4 h-4"
-              style={{ color: t.muted }}
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
-                strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-                {icon.full}
-              </svg>
-            </a>
-          ))}
-        </div>
-
-        {/* Theme swatches */}
-        <div className="flex gap-[10px] items-center">
-          {Object.entries(THEMES).map(([key, val]) => (
-            <button
-              key={key}
-              onClick={() => setTheme(key)}
-              title={key}
-              className={`w-[16px] h-[16px] rounded-full border-2 ${theme === key ? 'scale-[1.15]' : ''}`}
-              style={{
-                backgroundColor: key === 'cream' ? '#f7f4ef' : key === 'green' ? '#0a1f16' : '#080808',
-                borderColor: theme === key ? t.text : 'transparent',
-                boxShadow: '0 0 0 1px rgba(0,0,0,0.08)',
-              }}
-            />
-          ))}
-        </div>
-      </nav>
+      
 
       {/* ── MAIN CONTENT ── */}
       {/*
@@ -261,7 +224,7 @@ export default function Contact() {
         - Desktop (≥ 1200 px) : three columns (original)
       */}
       <div
-        className="w-full max-w-[1600px] mx-auto"
+        className="w-full max-w-7xl mx-auto"
         style={{ paddingTop: 'clamp(100px, 14vw, 140px)', paddingBottom: 'clamp(60px, 8vw, 100px)', paddingLeft: 'clamp(16px, 4vw, 40px)', paddingRight: 'clamp(16px, 4vw, 40px)' }}
       >
         {/* Three-pane grid — collapses gracefully */}

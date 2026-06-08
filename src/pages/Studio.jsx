@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Footer from '../components/Footer';
 import Marquee from '../components/UI/Marquee';
+import { useTheme } from '../context/ThemeContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,16 +62,12 @@ const INSTAGRAM_IMAGES = [
   'assets/timeless.jpeg',
 ];
 
-const THEME_COLORS = {
-  green: '#0a1f16',
-  purple: '#1a0f2b',
-  black: '#080808',
-};
+
 
 export default function Studio() {
   const [activeTab, setActiveTab] = useState('residential');
   const [showMore, setShowMore] = useState(false);
-  const [theme, setTheme] = useState('green');
+
   const [pillStyle, setPillStyle] = useState({ left: 0, width: 0 });
   /* track if the hero is "compact" (mobile portrait) */
   const [isMobile, setIsMobile] = useState(false);
@@ -80,7 +77,9 @@ export default function Studio() {
   const tabRefs = useRef({});
   const drawerRef = useRef(null);
 
-  const bgColor = THEME_COLORS[theme];
+  const { theme } = useTheme();
+
+const bgColor = theme;
   const panel = PANELS[activeTab];
 
   /* ── responsive breakpoint tracker ── */
@@ -269,19 +268,7 @@ export default function Studio() {
         }}
       >
         {/* Theme swatches */}
-        <div className="absolute top-8 right-[5vw] flex gap-3 items-center">
-          {Object.entries(THEME_COLORS).map(([key, color]) => (
-            <button
-              key={key}
-              onClick={() => setTheme(key)}
-              title={key}
-              className={`w-[18px] h-[18px] rounded-full border-2 transition-transform ${
-                theme === key ? 'scale-[1.15] border-white' : 'border-transparent'
-              }`}
-              style={{ backgroundColor: color, boxShadow: '0 0 0 1px rgba(255,255,255,0.15)' }}
-            />
-          ))}
-        </div>
+        
 
         {/* Studio manifesto */}
         <div
