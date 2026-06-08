@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Footer from '../components/Footer';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SLIDES = [
   {
@@ -36,13 +39,11 @@ export default function Home() {
   const [current, setCurrent] = useState(0);
   const containerRef = useRef(null);
 
-  // Preloader removal
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 2800);
     return () => clearTimeout(timer);
   }, []);
 
-  // Slide interval
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent(prev => (prev + 1) % SLIDES.length);
@@ -50,7 +51,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // GSAP entrance animations
   useGSAP(() => {
     if (!loaded) return;
     gsap.from('.rsd-header', {
@@ -74,13 +74,6 @@ export default function Home() {
       delay: 0.3,
       ease: 'power4.out',
     });
-    gsap.from('.rsd-monogram', {
-      opacity: 0,
-      x: -40,
-      duration: 2,
-      delay: 0.4,
-      ease: 'power4.out',
-    });
     gsap.from('.light-leak-1', { opacity: 0, scale: 0.7, duration: 3 });
     gsap.from('.light-leak-2', { opacity: 0, scale: 0.7, duration: 3, delay: 0.3 });
     gsap.from('.quote-text', {
@@ -96,86 +89,105 @@ export default function Home() {
   }, { dependencies: [loaded], scope: containerRef });
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="overflow-hidden">
       {/* PRELOADER */}
-      <div className={`preloader ${loaded ? 'hide' : ''}`}>
+      <div
+        className={`fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center transition-all duration-1000 ${
+          loaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
+      >
         <h1
-          className="font-serif text-white font-normal uppercase"
-          style={{ fontSize: '42px', letterSpacing: '18px' }}
+          className="text-white uppercase font-serif text-center px-6"
+          style={{ fontSize: 'clamp(18px, 5vw, 42px)', letterSpacing: '0.3em' }}
         >
           Rakesh Sharma Design
         </h1>
-        <p className="mt-[18px] text-white/40 text-[11px] uppercase" style={{ letterSpacing: '8px' }}>
+        <p
+          className="mt-4 text-white/40 uppercase text-center"
+          style={{ fontSize: 'clamp(9px, 2vw, 11px)', letterSpacing: '0.4em' }}
+        >
           Architectural Elegance
         </p>
       </div>
 
-      {/* HERO SLIDER */}
-      <section className="relative w-full h-screen overflow-hidden bg-black">
-        {/* Slide images */}
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-black" style={{ height: '100dvh', minHeight: '600px' }}>
+        {/* Slides */}
         {SLIDES.map((slide, i) => (
           <img
             key={i}
             src={slide.img}
             alt={slide.heading}
-            className={`hero-slide ${i === current ? 'active' : ''}`}
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-[1800ms] ease-out ${
+              i === current ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+            }`}
           />
         ))}
 
-        {/* Gradient overlay */}
+        {/* Overlay */}
         <div
-          className="absolute inset-0 z-[2] pointer-events-none"
+          className="absolute inset-0 z-[2]"
           style={{
-            background:
-              'linear-gradient(to bottom, rgba(0,0,0,0.68), rgba(0,0,0,0.2), rgba(0,0,0,0.84))',
+            background: 'linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.15), rgba(0,0,0,.88))',
           }}
         />
 
-        {/* Film grain */}
-        <div className="film-grain" />
+        {/* Film Grain */}
+        <div className="film-grain absolute inset-0 z-[3]" />
 
         {/* Light leaks */}
         <div
-          className="light-leak-1 absolute -top-[250px] -left-[200px] w-[700px] h-[700px] rounded-full pointer-events-none animate-float1"
+          className="light-leak-1 absolute -top-40 -left-40 rounded-full z-[3] pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(255,180,120,0.16), transparent 70%)',
+            width: 'clamp(200px, 40vw, 700px)',
+            height: 'clamp(200px, 40vw, 700px)',
+            background: 'radial-gradient(circle, rgba(255,180,120,.15), transparent 70%)',
             filter: 'blur(80px)',
-            zIndex: 2,
           }}
         />
         <div
-          className="light-leak-2 absolute -right-[250px] -bottom-[250px] w-[700px] h-[700px] rounded-full pointer-events-none animate-float2"
+          className="light-leak-2 absolute -right-40 -bottom-40 rounded-full z-[3] pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%)',
+            width: 'clamp(200px, 40vw, 700px)',
+            height: 'clamp(200px, 40vw, 700px)',
+            background: 'radial-gradient(circle, rgba(255,255,255,.08), transparent 70%)',
             filter: 'blur(80px)',
-            zIndex: 2,
           }}
         />
 
-        {/* Big RSD watermark */}
+        {/* WATERMARK — hidden on very small screens */}
         <div
-          className="rsd-watermark absolute right-[40px] top-1/2 -translate-y-1/2 z-[5] font-sans font-extrabold leading-[0.8] select-none pointer-events-none text-white/[0.06]"
-          style={{ fontSize: '340px', letterSpacing: '-22px' }}
+          className="rsd-watermark absolute right-2 top-1/2 -translate-y-1/2 z-[4] font-black select-none pointer-events-none text-white/[0.05] leading-none hidden sm:block"
+          style={{ fontSize: 'clamp(80px, 18vw, 340px)', letterSpacing: '-0.08em' }}
         >
           RSD
         </div>
 
-        {/* Slide text */}
-        <div className="hero-overlay-text absolute left-[90px] bottom-[90px] z-[10] text-white max-lg:left-[30px] max-lg:bottom-[60px]">
+        {/* TEXT */}
+        <div
+          className="hero-overlay-text absolute z-10 bottom-24 text-white"
+          style={{
+            left: 'clamp(20px, 5vw, 80px)',
+            right: 'clamp(20px, 5vw, 80px)',
+            maxWidth: '1000px',
+          }}
+        >
           {SLIDES.map((slide, i) => (
-            <div key={i} className={`text-slide ${i === current ? 'active' : ''}`}>
+            <div
+              key={i}
+              className={`transition-all duration-700 ${
+                i === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 absolute'
+              }`}
+            >
               <h2
-                className="font-serif font-normal uppercase leading-[1.05] max-w-[950px]"
-                style={{
-                  fontSize: 'clamp(48px, 6vw, 88px)',
-                  letterSpacing: '2px',
-                }}
+                className="uppercase leading-[1.05] font-serif"
+                style={{ fontSize: 'clamp(30px, 9vw, 88px)' }}
               >
                 {slide.heading}
               </h2>
               <p
-                className="mt-[26px] text-[12px] uppercase opacity-85"
-                style={{ letterSpacing: '8px' }}
+                className="mt-4 uppercase text-white/80"
+                style={{ fontSize: 'clamp(9px, 1.8vw, 12px)', letterSpacing: '0.3em' }}
               >
                 {slide.sub}
               </p>
@@ -183,31 +195,22 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Slide dots */}
-        <div className="absolute bottom-[90px] right-[90px] z-[10] flex gap-3 max-lg:right-[30px]">
-          {SLIDES.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`w-[6px] h-[6px] rounded-full transition-all duration-500 cursor-pointer border-none ${
-                i === current ? 'bg-white scale-125' : 'bg-white/40'
-              }`}
-            />
-          ))}
-        </div>
+       
       </section>
 
-      {/* QUOTE SECTION */}
-      <section className="quote-section min-h-[45vh] bg-travertine-100 flex items-center px-[90px] py-[120px] max-lg:px-[30px] max-lg:py-[80px]">
+      {/* QUOTE */}
+      <section
+        className="quote-section bg-travertine-100 min-h-[35vh] flex items-center py-16"
+        style={{ padding: 'clamp(48px, 8vw, 128px) clamp(20px, 6vw, 96px)' }}
+      >
         <p
-          className="quote-text font-serif text-onyx-soft leading-[1.5] max-w-[1000px]"
-          style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}
+          className="quote-text font-serif text-onyx-soft leading-[1.5] max-w-[1100px]"
+          style={{ fontSize: 'clamp(20px, 4.5vw, 52px)' }}
         >
           "Simplicity is the ultimate expression of structural sophistication."
         </p>
       </section>
 
-      {/* FOOTER */}
       <Footer theme="light" />
     </div>
   );

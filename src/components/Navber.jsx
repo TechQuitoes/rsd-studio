@@ -125,103 +125,170 @@ export default function Navbar({ variant = 'home' }) {
       </nav>
 
       {/* MAIN HEADER */}
-      {isHome ? (
-        /* Home page: glass pill header */
-        <header
-          className="rsd-header-shimmer fixed top-6 left-1/2 -translate-x-1/2 w-[94%] h-[92px] z-[5000] grid grid-cols-[auto_1fr_auto] items-center px-9 rounded-[30px] overflow-hidden"
-          style={{
-            background: 'rgba(0,0,0,0.38)',
-            backdropFilter: 'blur(18px)',
-            WebkitBackdropFilter: 'blur(18px)',
-            border: '1px solid rgba(255,255,255,0.08)',
-          }}
-        >
-          {/* Left: RSD monogram */}
-          <div className="flex items-center">
-            <div
-              className="flex items-center gap-0 font-sans font-extrabold uppercase text-white leading-none"
-              style={{ letterSpacing: '-2px' }}
-            >
-              {['R', 'S', 'D'].map((letter, i) => (
-                <span
-                  key={i}
-                  className="text-[62px] select-none"
-                  style={{
-                    background: 'linear-gradient(to bottom, #ffffff, #d8d8d8)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    marginLeft: i > 0 ? '-10px' : undefined,
-                  }}
-                >
-                  {letter}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Center: brand name */}
-          <div className="text-center">
-            <Link
-              to="/"
-              className="text-white no-underline font-serif uppercase"
-              style={{ fontSize: '28px', letterSpacing: '10px' }}
-            >
-              Rakesh Sharma Design
-            </Link>
-          </div>
-
-          {/* Right: menu trigger */}
-          <div className="flex justify-end">
-            <button
-              onClick={toggleMenu}
-              className="mobile-trigger w-[62px] h-[62px] rounded-full flex items-center justify-center relative overflow-hidden cursor-pointer"
-              style={{
-                border: '1px solid rgba(255,255,255,0.12)',
-                background: 'rgba(255,255,255,0.05)',
-              }}
-            >
-              <div className="flex flex-col gap-[5px] z-10">
-                <span className="block w-[22px] h-px bg-white" />
-                <span className="block w-[22px] h-px bg-white" />
-              </div>
-            </button>
-          </div>
-        </header>
-      ) : (
-        /* Other pages: simpler nav */
-        <nav
-           className="fixed top-0 left-0 w-full flex justify-between items-center z-[1000] transition-all duration-500 bg-black"
-  style={{
-    padding: '30px 4vw',
-    backgroundColor: '#0a1f16', // same as Studio green theme
-    
-    borderBottom: '1px solid rgba(255,255,255,0.08)',
-  }}
-  id="mainNav"
-
-        >
-          <Link
-            to="/"
-            className="text-[14px] text-white uppercase font-bold no-underline transition-colors duration-500"
-            style={{ letterSpacing: '0.35em', color: variant === 'dark' ? '#ffffff' : '#ffffff' }}
+      {/* MAIN HEADER */}
+{isHome ? (
+  <header
+    className="
+      fixed
+      top-3 md:top-6
+      left-1/2
+      -translate-x-1/2
+      w-[95%]
+      md:w-[94%]
+      h-[72px]
+      md:h-[92px]
+      z-[5000]
+      grid
+      grid-cols-[auto_1fr_auto]
+      items-center
+      px-4
+      md:px-8
+      rounded-[20px]
+      md:rounded-[30px]
+      overflow-hidden
+    "
+    style={{
+      background: "rgba(0,0,0,0.38)",
+      backdropFilter: "blur(18px)",
+      WebkitBackdropFilter: "blur(18px)",
+      border: "1px solid rgba(255,255,255,0.08)",
+    }}
+  >
+    {/* LEFT */}
+    <div className="flex items-center">
+      <div
+        className="
+          flex
+          items-center
+          font-extrabold
+          uppercase
+          text-white
+          leading-none
+        "
+      >
+        {["R", "S", "D"].map((letter, i) => (
+          <span
+            key={i}
+            className="
+              text-[32px]
+              sm:text-[40px]
+              md:text-[62px]
+              select-none
+            "
+            style={{
+              background:
+                "linear-gradient(to bottom,#ffffff,#d8d8d8)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              marginLeft: i > 0 ? "-6px" : 0,
+            }}
           >
-            Rakesh Sharma Designs
-          </Link>
-          <button
-            onClick={toggleMenu}
-            className="flex flex-col gap-[5px] cursor-pointer bg-transparent border-none p-2"
-          >
-            <span
-              className="block w-[22px] h-px transition-colors duration-500"
-              style={{ background: variant === 'dark' ? '#ffffff' : '#ffffff' }}
-            />
-            <span
-              className="block w-[22px] h-px transition-colors duration-500"
-              style={{ background: variant === 'dark' ? '#ffffff' : '#ffffff' }}
-            />
-          </button>
-        </nav>
-      )}
+            {letter}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    {/* CENTER */}
+    <div className="text-center px-2 overflow-hidden">
+      <Link
+        to="/"
+        className="
+          text-white
+          uppercase
+          whitespace-nowrap
+          block
+          truncate
+        "
+        style={{
+          fontSize: "clamp(8px,2vw,28px)",
+          letterSpacing: "clamp(1px,1vw,10px)",
+        }}
+      >
+        Rakesh Sharma Design
+      </Link>
+    </div>
+
+    {/* RIGHT */}
+    <div className="flex justify-end">
+      <button
+        onClick={toggleMenu}
+        className="
+          w-[48px]
+          h-[48px]
+          md:w-[62px]
+          md:h-[62px]
+          rounded-full
+          flex
+          items-center
+          justify-center
+        "
+        style={{
+          border: "1px solid rgba(255,255,255,0.12)",
+          background: "rgba(255,255,255,0.05)",
+        }}
+      >
+        <div className="flex flex-col gap-[4px]">
+          <span className="block w-[20px] h-px bg-white" />
+          <span className="block w-[20px] h-px bg-white" />
+        </div>
+      </button>
+    </div>
+  </header>
+) : (
+  <nav
+    id="mainNav"
+    className="
+      fixed
+      top-0
+      left-0
+      w-full
+      z-[1000]
+      flex
+      justify-between
+      items-center
+      px-4
+      md:px-[4vw]
+      py-5
+      md:py-8
+      bg-[#0a1f16]
+      border-b
+      border-white/10
+    "
+  >
+    <Link
+      to="/"
+      className="
+        text-white
+        uppercase
+        font-bold
+        text-[10px]
+        sm:text-[12px]
+        md:text-[14px]
+        whitespace-nowrap
+      "
+      style={{
+        letterSpacing: "0.25em",
+      }}
+    >
+      Rakesh Sharma Designs
+    </Link>
+
+    <button
+      onClick={toggleMenu}
+      className="
+        flex
+        flex-col
+        gap-[5px]
+        bg-transparent
+        border-none
+      "
+    >
+      <span className="block w-[22px] h-px bg-white" />
+      <span className="block w-[22px] h-px bg-white" />
+    </button>
+  </nav>
+)}
     </>
   );
 }

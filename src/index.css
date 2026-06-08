@@ -204,27 +204,6 @@ body {
 MOBILE GLOBAL RESPONSIVE
 ========================================= */
 
-@media(max-width:991px){
-
-  :root{
-    --container-width:92%;
-    --section-space:90px;
-  }
-
-}
-
-@media(max-width:768px){
-
-  :root{
-    --container-width:90%;
-    --section-space:70px;
-  }
-
-  .heading-xl{
-    line-height:1.08;
-  }
-
-}
 
 @media(max-width:480px){
 
@@ -232,4 +211,27 @@ MOBILE GLOBAL RESPONSIVE
     --container-width:88%;
   }
 
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-slide {
+  width: 100%;
+}
+
+.film-grain {
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+@media (max-width: 768px) {
+  .film-grain {
+    opacity: 0.05;
+  }
 }
