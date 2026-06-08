@@ -218,7 +218,7 @@ const THEME_COLORS = {
               truncate
             "
             style={{
-              fontSize: "clamp(10px,2vw,28px)",
+              fontSize: "clamp(7px,1vw,28px)",
               letterSpacing: "clamp(1px,1vw,10px)",
             }}
           >
