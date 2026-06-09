@@ -25,7 +25,55 @@ const PANELS = {
       { src: 'assets/Res3.jpeg', title: 'Desert Sanctuary Villa', cat: 'Residential', offset: false },
       { src: 'assets/Res4.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', offset: true },
     ],
-    extra: 'assets/Res5.jpeg',
+    extra: [
+  {
+    src: '/assets/res6.jpeg',
+    title: 'Residential 01',
+    cat: 'Residential',
+  },
+  {
+    src: '/assets/res7.jpeg',
+    title: 'Residential 02',
+    cat: 'Residential',
+  },
+  {
+    src: '/assets/res8.jpeg',
+    title: 'Residential 03',
+    cat: 'Residential',
+  },
+   { src: 'assets/res9.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential'},
+    { src: 'assets/res10.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential' },
+     { src: 'assets/res11.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+      { src: 'assets/res12.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential' },
+       { src: 'assets/res13.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+        { src: 'assets/res14.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+         { src: 'assets/res15.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+          { src: 'assets/res16.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/res17.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/res18.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/res19.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/res20.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/res21.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/res22.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },  
+    { src: 'assets/res23.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/res24.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/res25.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/res26.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/res27.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/res28.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/res29.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/res30.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+      { src: 'assets/res31.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    
+
+
+          
+    
+
+
+          
+
+]
   },
   commercial: {
     heading: 'Immersive Venues\n& Social Assets',
@@ -37,7 +85,57 @@ const PANELS = {
       { src: 'assets/comm3.jpeg', title: 'Monolith Boutique Showroom', cat: 'Retail Exhibit', offset: false },
       { src: 'assets/comm4.jpeg', title: 'Verdant Concept Lounge', cat: 'Commercial Interior', offset: true },
     ],
-    extra: 'assets/comm5.jpeg',
+    extra: [
+  {
+    src: '/assets/res6.jpeg',
+    title: 'Commercial Space 01',
+    cat: 'Commercial',
+  },
+  {
+    src: '/assets/res7.jpeg',
+    title: 'Commercial Space 02',
+    cat: 'Commercial',
+  },
+  {
+    src: '/assets/res8.jpeg',
+    title: 'Commercial Space 03',
+    cat: 'Commercial',
+  },
+   { src: 'assets/com6.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial'},
+    { src: 'assets/com7.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
+     { src: 'assets/com8.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
+      { src: 'assets/com9.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
+       { src: 'assets/com10.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+        { src: 'assets/com11.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+         { src: 'assets/com12.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+          { src: 'assets/com13.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
+    { src: 'assets/com14.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
+    { src: 'assets/com15.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
+    { src: 'assets/com16.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
+    { src: 'assets/com17.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+    { src: 'assets/com18.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+    { src: 'assets/com19.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },  
+    { src: 'assets/com20.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+    { src: 'assets/com21.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
+    { src: 'assets/com22.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
+    { src: 'assets/com23.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+    { src: 'assets/com24.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+    { src: 'assets/com25.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+    { src: 'assets/com26.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+    { src: 'assets/com27.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+      { src: 'assets/com28.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+      { src: 'assets/com29.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
+      
+    
+
+
+          
+    
+
+
+          
+
+]
   },
   offices: {
     heading: 'Monolithic Facades\n& Workplace Horizons',
@@ -49,9 +147,45 @@ const PANELS = {
       { src: 'assets/offi3.jpeg', title: 'Monolith Conference Wing', cat: 'Office Workspace', offset: false },
       { src: 'assets/offi4.jpeg', title: 'Fluted Timber Pavilion Facade', cat: 'Architectural Elevation', offset: true },
     ],
-    extra: 'assets/offi5.jpeg',
-    extraTitle: 'The Glass Horizon Villa Shell',
-    extraCat: 'Architectural Elevation',
+     extra: [
+  {
+    src: '/assets/res6.jpeg',
+    title: 'Commercial Space 01',
+    cat: 'Offices',
+  },
+  {
+    src: '/assets/res7.jpeg',
+    title: 'Commercial Space 02',
+    cat: 'Offices',
+  },
+  {
+    src: '/assets/res8.jpeg',
+    title: 'Commercial Space 03',
+    cat: 'Offices',
+  },
+   { src: 'assets/offi6.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices'},
+    { src: 'assets/offi7.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices' },
+     { src: 'assets/offi8.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
+      { src: 'assets/offi9.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices' },
+       { src: 'assets/offi10.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
+        { src: 'assets/offi11.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
+         { src: 'assets/offi12.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
+          { src: 'assets/offi13.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
+    { src: 'assets/offi14.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
+    { src: 'assets/offi15.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
+    { src: 'assets/offi16.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
+    { src: 'assets/offi17.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
+    { src: 'assets/offi18.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
+   
+
+
+          
+    
+
+
+          
+
+]
   },
 };
 
@@ -434,36 +568,72 @@ export default function Studio() {
             </div>
 
             {/* Expandable drawer */}
-            <div ref={drawerRef} style={{ height: 0, overflow: 'hidden', opacity: 0 }}>
-              <div
-                className="graphic-panel parallax-container relative overflow-hidden w-full"
-                style={{ aspectRatio: isMobile ? '4/3' : '16/7' }}
-              >
-                <div className="w-full overflow-hidden" style={{ height: '135%', marginTop: '-17.5%' }}>
-                  <img
-                    src={panel.extra}
-                    alt="Gallery extra"
-                    className="parallax-img w-full h-full object-cover"
-                  />
-                </div>
-                {panel.extraTitle && (
-                  <div className="panel-meta-overlay">
-                    <h4
-                      className="font-light uppercase text-white"
-                      style={{ fontSize: '16px', marginBottom: '4px' }}
-                    >
-                      {panel.extraTitle}
-                    </h4>
-                    <p
-                      className="uppercase text-white/60"
-                      style={{ fontSize: '10px', letterSpacing: '1.5px' }}
-                    >
-                      {panel.extraCat}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </div>
+            <div
+  ref={drawerRef}
+  style={{
+    height: 0,
+    overflow: 'hidden',
+    opacity: 0,
+  }}
+>
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+      gap: 'clamp(16px,3vw,40px)',
+    }}
+  >
+    {panel.extra?.map((item, index) => (
+      <div
+        key={index}
+        className="graphic-panel parallax-container relative overflow-hidden"
+        style={{
+          aspectRatio: '3/4',
+          marginTop:
+            !isMobile && index % 2 !== 0
+              ? '72px'
+              : 0,
+        }}
+      >
+        <div
+          className="w-full overflow-hidden"
+          style={{
+            height: '135%',
+            marginTop: '-17.5%',
+          }}
+        >
+          <img
+            src={item.src}
+            alt={item.title}
+            className="parallax-img w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="panel-meta-overlay">
+          <h4
+            className="font-light uppercase text-white"
+            style={{
+              fontSize: 'clamp(13px,1.2vw,16px)',
+              marginBottom: '4px',
+            }}
+          >
+            {item.title}
+          </h4>
+
+          <p
+            className="uppercase text-white/60"
+            style={{
+              fontSize: '10px',
+              letterSpacing: '1.5px',
+            }}
+          >
+            {item.cat}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
           </div>
         </div>
 
