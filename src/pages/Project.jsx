@@ -360,7 +360,7 @@ const PROJECTS = [
   {
     id: 36, category: "commercial",
     title: "Aura Corporate Hub", subtitle: "Commercial Workspace Axis · Ed. 02",
-    img: "assets/com30.jpeg",
+    img: "assets/comm3.jpeg",
   },
 //minimalist
   {
