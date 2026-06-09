@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navber';
+import FloatingSocials from './FloatingSocials';
 
 export default function PageLayout({ children }) {
   const location = useLocation();
@@ -16,6 +17,7 @@ export default function PageLayout({ children }) {
   return (
     <div className="min-h-screen">
       <Navbar variant={navVariant} />
+      <FloatingSocials/>
       <main>{children}</main>
     </div>
   );

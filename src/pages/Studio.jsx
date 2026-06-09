@@ -77,11 +77,13 @@ export default function Studio() {
   const tabRefs = useRef({});
   const drawerRef = useRef(null);
 
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
 const bgColor = theme;
   const panel = PANELS[activeTab];
-
+useEffect(() => {
+    setTheme("#0a1f16");
+  }, [setTheme]);
   /* ── responsive breakpoint tracker ── */
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 768px)');

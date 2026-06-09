@@ -1,10 +1,17 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 import { useTheme } from '../context/ThemeContext';
 
 const THEMES = {
+  '#f4f0ea': {
+    bg: '#f4f0ea',
+    text: '#111111',
+    muted: '#666666',
+    border: 'rgba(0,0,0,0.12)',
+  },
+
   '#0a1f16': {
     bg: '#0a1f16',
     text: '#ffffff',
@@ -127,7 +134,7 @@ function FloatingLabel({ id, label, type = 'text', required = false, textArea = 
         style={{
           top: active ? '-12px' : '14px',
           left: 0,
-          fontSize: active ? '10px' : '14px',
+          fontSize: active ? '7px' : '11px',
           letterSpacing: active ? '0.15em' : 'normal',
           textTransform: active ? 'uppercase' : 'none',
           fontWeight: active ? 600 : 300,
@@ -141,20 +148,23 @@ function FloatingLabel({ id, label, type = 'text', required = false, textArea = 
 }
 
 export default function Contact() {
-  const { theme } = useTheme();
+   const { theme, setTheme } = useTheme();
   const [selectedDay, setSelectedDay] = useState('01');
   const [selectedTime, setSelectedTime] = useState('10:30 AM');
   const [inquiryType, setInquiryType] = useState('project');
   const [submitted, setSubmitted] = useState(false);
 
   const containerRef = useRef(null);
-  const t = THEMES[theme] || THEMES['#0a1f16'];
+  const t = THEMES[theme] || THEMES['#f4f0ea'];
 
   useGSAP(() => {
     gsap.to('#dirPane',   { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' });
     gsap.to('#formPane',  { opacity: 1, y: 0, duration: 1.2, delay: 0.15, ease: 'power3.out' });
     gsap.to('#schedPane', { opacity: 1, y: 0, duration: 1.2, delay: 0.3, ease: 'power3.out' });
   }, { scope: containerRef });
+ useEffect(() => {
+    setTheme("#f4f0ea");
+  }, [setTheme]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -224,7 +234,7 @@ export default function Contact() {
         - Desktop (≥ 1200 px) : three columns (original)
       */}
       <div
-        className="w-full max-w-7xl mx-auto"
+        className="w-full max-w-[1350px] mx-auto "
         style={{ paddingTop: 'clamp(100px, 14vw, 140px)', paddingBottom: 'clamp(60px, 8vw, 100px)', paddingLeft: 'clamp(16px, 4vw, 40px)', paddingRight: 'clamp(16px, 4vw, 40px)' }}
       >
         {/* Three-pane grid — collapses gracefully */}
@@ -239,31 +249,31 @@ export default function Contact() {
           {/* ── COLUMN 1: DIRECTORY ── */}
           <aside
             id="dirPane"
-            className="flex flex-col gap-[50px]"
+            className="flex flex-col gap-[20px] pl-10 "
             style={{ opacity: 0, transform: 'translateY(20px)' }}
           >
             <div>
               <h1
                 className="font-serif font-normal uppercase leading-[1] mb-[10px]"
-                style={{ fontSize: 'clamp(48px, 8vw, 78px)', fontWeight: 300, letterSpacing: '-0.02em', color: t.text }}
+                style={{ fontSize: 'clamp(30px, 4vw, 50px)', fontWeight: 200, color: t.text }}
               >
                 Contact
               </h1>
-              <p className="text-[14px] leading-[1.7] font-light" style={{ color: t.muted }}>
+              <p className="text-[14px] max-w-4xl mb-5 leading-[1.7] font-light" style={{ color: t.muted }}>
                 Connect with our regional studio hub nodes to initiate spatial alignments
                 and customized high-performance turnkey assemblies.
               </p>
             </div>
 
-            <div className="flex flex-col gap-8 border-t pt-[35px]" style={{ borderColor: t.border }}>
+            <div className="flex flex-col  gap-4 border-t pt-[35px]" style={{ borderColor: t.border }}>
               {[
                 { label: 'Email', href: 'studio@rakeshsharmadesigns.com', display: 'studio@rakeshsharmadesigns.com' },
                 { label: 'For project quotation', href: 'inquiry@rakeshsharmadesigns.com', display: 'inquiry@rakeshsharmadesigns.com' },
                 { label: 'For Press', href: 'sonali@rakeshsharmadesigns.com', display: 'sonali@rakeshsharmadesigns.com' },
               ].map(item => (
-                <div key={item.label} className="flex flex-col gap-[6px]">
+                <div key={item.label} className="flex flex-col gap-[3px]">
                   <span
-                    className="text-[9.5px] uppercase font-semibold opacity-50"
+                    className="text-[11px] uppercase font-semibold opacity-50"
                     style={{ letterSpacing: '0.18em', color: t.text }}
                   >
                     {item.label}
@@ -281,7 +291,7 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="text-[13.5px] leading-[1.6] font-light" style={{ color: t.muted }}>
+            <div className="text-[13.5px] leading-[1.5] pt-10 font-light" style={{ color: t.muted }}>
               <p className="font-medium mb-1" style={{ color: t.text }}>Rakesh Sharma Designs</p>
               <p>Indore, Madhya Pradesh, India</p>
             </div>
@@ -310,13 +320,13 @@ export default function Contact() {
                 </div>
               </div>
             ) : (
-              <div /* using div instead of form to avoid native submit on Enter */ className="flex flex-col gap-[45px]">
+              <div /* using div instead of form to avoid native submit on Enter */ className="flex flex-col gap-[40px]">
                 {/* Row 1 */}
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
-                    gap: 'clamp(32px, 4vw, 30px)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 100px), 1fr))',
+                    gap: 'clamp(20px, 2vw, 23px)',
                   }}
                 >
                   <FloatingLabel id="clientName" label="Name *" required />
@@ -326,7 +336,7 @@ export default function Contact() {
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 100px), 1fr))',
                     gap: 'clamp(32px, 4vw, 30px)',
                   }}
                 >
@@ -337,7 +347,7 @@ export default function Contact() {
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 100px), 1fr))',
                     gap: 'clamp(32px, 4vw, 30px)',
                   }}
                 >
@@ -348,13 +358,13 @@ export default function Contact() {
                 {/* Inquiry type */}
                 <div className="flex flex-col gap-3">
                   <h5
-                    className="text-[10.5px] uppercase font-semibold"
+                    className="text-[11px] uppercase font-semibold"
                     style={{ letterSpacing: '0.15em', color: t.text }}
                   >
                     Type of Inquiry *
                   </h5>
                   {/* Stacked on mobile, row on larger */}
-                  <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+                  <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
                     {INQUIRY_TYPES.map(opt => (
                       <label key={opt.value} className="flex items-center gap-2 cursor-pointer">
                         <input
@@ -377,7 +387,7 @@ export default function Contact() {
                           )}
                         </span>
                         <span
-                          className="text-[12.5px] uppercase font-light transition-colors duration-300"
+                          className="text-[11px] uppercase font-light transition-colors duration-300"
                           style={{
                             letterSpacing: '0.05em',
                             color: inquiryType === opt.value ? t.text : t.muted,
@@ -395,7 +405,7 @@ export default function Contact() {
 
                 <button
                   onClick={handleSubmit}
-                  className="relative overflow-hidden z-[1] bg-transparent border text-[11px] uppercase font-medium cursor-pointer transition-all duration-300 w-max group hover:text-travertine-200"
+                  className="relative overflow-hidden z-[1] bg-transparent border text-[10px] uppercase font-medium cursor-pointer transition-all duration-300 w-max group hover:text-travertine-200"
                   style={{
                     border: `1px solid ${t.text}`,
                     color: t.text,
@@ -416,18 +426,18 @@ export default function Contact() {
           {/* ── COLUMN 3: SCHEDULER ── */}
           <section
             id="schedPane"
-            className="flex flex-col gap-[25px]"
+            className="flex flex-col gap-[20px]"
             style={{ opacity: 0, transform: 'translateY(20px)' }}
           >
             <div>
               <h3
-                className="font-serif font-normal uppercase text-[20px] mb-0"
+                className="font-serif font-normal uppercase text-[14px] mb-0"
                 style={{ letterSpacing: '0.02em', color: t.text }}
               >
                 Book Appointment
               </h3>
               <span
-                className="block text-[10.5px] uppercase font-semibold mt-6"
+                className="block text-[11px] uppercase font-semibold mt-6"
                 style={{ letterSpacing: '0.15em', color: '#836e62' }}
               >
                 Meeting by appointment only
@@ -443,7 +453,7 @@ export default function Contact() {
               }}
             >
               <div
-                className="text-[12px] font-semibold uppercase text-center"
+                className="text-[10px] font-semibold uppercase text-center"
                 style={{ letterSpacing: '0.12em', color: t.text }}
               >
                 June 2026
@@ -451,7 +461,7 @@ export default function Contact() {
 
               <div className="grid grid-cols-7 gap-[4px] text-center">
                 {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d, i) => (
-                  <div key={i} className="text-[9px] font-semibold uppercase pb-1" style={{ color: t.muted }}>
+                  <div key={i} className="text-[12px] font-semibold uppercase pb-1" style={{ color: t.muted }}>
                     {d}
                   </div>
                 ))}
@@ -460,7 +470,7 @@ export default function Contact() {
                     key={day}
                     disabled={muted}
                     onClick={() => !muted && setSelectedDay(day)}
-                    className={`aspect-square flex items-center justify-center text-[12px] font-light transition-all duration-200 border-none cursor-pointer ${
+                    className={`aspect-square flex items-center justify-center text-[10px] font-light transition-all duration-200 border-none cursor-pointer ${
                       muted ? 'opacity-20 cursor-not-allowed' : ''
                     }`}
                     style={{

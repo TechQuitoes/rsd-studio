@@ -144,60 +144,34 @@ export default function Footer({ theme = 'light' }) {
 
           {/* Navigation */}
           <div>
-            <h4
-              className={`uppercase ${mutedColor} mb-[28px]`}
-              style={{ fontSize: '12px', letterSpacing: '4px' }}
-            >
-              Navigation
-            </h4>
-            <ul className="list-none space-y-4">
-              {[
-                { label: 'Projects', to: '/studio' },
-                { label: 'Studio', to: '/journal' },
-                { label: 'Journal', to: '/journal' },
-                { label: 'Contact', to: '/contact' },
-              ].map(({ label, to }) => (
-                <li key={label}>
-                  <Link
-                    to={to}
-                    className={`footer-link ${linkColor} font-light`}
-                    style={{ fontSize: 'clamp(13px, 1.4vw, 15px)' }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+  <h4
+    className={`uppercase ${mutedColor} mb-[28px] ` }
+    style={{ fontSize: '12px', letterSpacing: '4px' }}
+  >
+    Navigation
+  </h4>
 
-          {/* Social */}
-          <div>
-            <h4
-              className={`uppercase ${mutedColor} mb-[28px]`}
-              style={{ fontSize: '12px', letterSpacing: '4px' }}
-            >
-              Social
-            </h4>
-            <ul className="list-none space-y-4">
-              {[
-                { label: 'Instagram', href: 'https://instagram.com' },
-                { label: 'Facebook', href: 'https://facebook.com' },
-                { label: 'LinkedIn', href: 'https://linkedin.com' },
-              ].map(({ label, href }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`footer-link ${linkColor} font-light`}
-                    style={{ fontSize: 'clamp(13px, 1.4vw, 15px)' }}
-                  >
-                    {label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-4">
+    {[
+      { label: 'Projects', to: '/project' },
+      { label: 'Studio', to: '/studio' },
+      { label: 'Journal', to: '/journal' },
+      { label: 'Contact', to: '/contact' },
+    ].map(({ label, to }) => (
+      <li key={label}>
+        <Link
+          to={to}
+          className={`footer-link ${linkColor} font-light`}
+          style={{ fontSize: 'clamp(13px, 1.4vw, 15px)' }}
+        >
+          {label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
+
+          
 
           {/* Contact */}
           <div>

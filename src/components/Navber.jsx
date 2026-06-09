@@ -181,31 +181,29 @@ const THEME_COLORS = {
         }}
       >
         {/* LEFT LOGO */}
-        <div className="flex items-center">
-          <div className="flex items-center font-extrabold uppercase leading-none">
-            {["R", "S", "D"].map((letter, i) => (
-              <span
-                key={i}
-                className="
-                  text-[32px]
-                  sm:text-[40px]
-                  md:text-[62px]
-                  select-none
-                "
-                style={{
-                  background:
-                    "linear-gradient(to bottom,#ffffff,#d8d8d8)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  marginLeft: i > 0 ? "-6px" : 0,
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </div>
-        </div>
-
+<Link to="/" className="flex items-center">
+  <div className="flex items-center font-extrabold uppercase leading-none cursor-pointer">
+    {["R", "S", "D"].map((letter, i) => (
+      <span
+        key={i}
+        className="
+          text-[32px]
+          sm:text-[40px]
+          md:text-[62px]
+          select-none
+        "
+        style={{
+          background: "linear-gradient(to bottom,#ffffff,#d8d8d8)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          marginLeft: i > 0 ? "-6px" : 0,
+        }}
+      >
+        {letter}
+      </span>
+    ))}
+  </div>
+</Link>
         {/* CENTER TITLE */}
         <div className="text-center px-2 overflow-hidden">
           <Link
