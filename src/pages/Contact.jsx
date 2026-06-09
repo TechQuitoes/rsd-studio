@@ -305,7 +305,7 @@ export default function Contact() {
               transform: 'translateY(20px)',
               borderLeft: `1px solid ${t.border}`,
               borderRight: `1px solid ${t.border}`,
-              padding: '0 clamp(16px, 3.5vw, 48px)',
+              padding: '0 clamp(16px, 2vw, 8px)',
             }}
           >
             {submitted ? (
@@ -320,7 +320,7 @@ export default function Contact() {
                 </div>
               </div>
             ) : (
-              <div /* using div instead of form to avoid native submit on Enter */ className="flex flex-col gap-[40px]">
+              <div /* using div instead of form to avoid native submit on Enter */ className="flex flex-col gap-[20px]">
                 {/* Row 1 */}
                 <div
                   style={{
@@ -410,7 +410,7 @@ export default function Contact() {
                     border: `1px solid ${t.text}`,
                     color: t.text,
                     letterSpacing: '0.2em',
-                    padding: '15px 40px',
+                    padding: '15px 10px',
                   }}
                 >
                   <span

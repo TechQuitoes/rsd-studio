@@ -58,11 +58,12 @@ export default function FloatingSocials() {
             aria-label={icon.name}
             className="block w-5 h-5 transition-all duration-300 hover:scale-[1.12]"
             style={{
-              color:
-                theme === "#f4f0ea"
-                  ? "rgba(0,0,0,0.4)"
-                  : "rgba(255,255,255,0.45)",
-            }}
+  
+  color:
+    theme === "#f4f0ea"
+      ? "#111111"
+      : "#000000",
+}}
           >
             <svg
               viewBox="0 0 24 24"

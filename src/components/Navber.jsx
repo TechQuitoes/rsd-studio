@@ -116,7 +116,7 @@ const THEME_COLORS = {
         {/* CLOSE BUTTON */}
         <button
           onClick={toggleMenu}
-          className="absolute top-[38px] right-[42px] w-[54px] h-[54px] bg-black text-white rounded-full text-2xl flex items-center justify-center z-10 hover:scale-105 transition-transform duration-700"
+          className="absolute top-[38px] right-[42px] w-[54px] h-[54px] bg-black text-white rounded-full text-2xl flex items-center justify-center z-10 hover:scale-105 transition-transform duration-700 hover:rotate-180 hover:bg-[#c5a880] hover:shadow-[0_10px_30px_rgba(197,168,128,0.35)]"
         >
           ×
         </button>
@@ -131,7 +131,20 @@ const THEME_COLORS = {
               <Link
                 to={to}
                 onClick={toggleMenu}
-                className="font-serif text-black uppercase tracking-[2px] no-underline"
+                className="
+font-serif
+text-black
+uppercase
+tracking-[2px]
+no-underline
+inline-block
+transition-all
+duration-500
+hover:scale-110
+hover:translate-x-2
+hover:text-[#c5a880]
+origin-left
+"
                 style={{
                   fontSize: "clamp(34px,5vw,52px)",
                   fontWeight: 400,
@@ -153,33 +166,34 @@ const THEME_COLORS = {
 
       {/* MAIN FLOATING HEADER FOR ALL PAGES */}
       <header
-        className="
-          fixed
-          top-3
-          md:top-6
-          left-1/2
-          -translate-x-1/2
-          w-[95%]
-          md:w-[94%]
-          h-[72px]
-          md:h-[92px]
-          z-[5000]
-          grid
-          grid-cols-[auto_1fr_auto]
-          items-center
-          px-4
-          md:px-8
-          rounded-[20px]
-          md:rounded-[30px]
-          overflow-hidden
-        "
-        style={{
-          background: "rgba(0,0,0,0.38)",
-          backdropFilter: "blur(18px)",
-          WebkitBackdropFilter: "blur(18px)",
-          border: "1px solid rgba(255,255,255,0.08)",
-        }}
-      >
+  className="
+    fixed
+    top-4
+    left-1/2
+    -translate-x-1/2
+    w-[96%]
+    max-w-[94%]
+    h-[68px]
+    md:h-[68px]
+    z-[5000]
+    grid
+    grid-cols-[auto_1fr_auto]
+    items-center
+    px-6
+    md:px-10
+    rounded-full
+    overflow-hidden
+  "
+  style={{
+    background:
+      "linear-gradient(180deg, rgba(24,24,24,0.95) 0%, rgba(18,18,18,0.98) 100%)",
+    backdropFilter: "blur(20px)",
+    WebkitBackdropFilter: "blur(20px)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    boxShadow:
+      "0 10px 40px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05)",
+  }}
+>
         {/* LEFT LOGO */}
 <Link to="/" className="flex items-center">
   <div className="flex items-center font-extrabold uppercase leading-none cursor-pointer">
@@ -189,14 +203,14 @@ const THEME_COLORS = {
         className="
           text-[32px]
           sm:text-[40px]
-          md:text-[62px]
+          md:text-[42px]
           select-none
         "
         style={{
           background: "linear-gradient(to bottom,#ffffff,#d8d8d8)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          marginLeft: i > 0 ? "-6px" : 0,
+          marginLeft: i > 0 ? "-3px" : 0,
         }}
       >
         {letter}
@@ -216,8 +230,9 @@ const THEME_COLORS = {
               truncate
             "
             style={{
-              fontSize: "clamp(7px,1vw,28px)",
-              letterSpacing: "clamp(1px,1vw,10px)",
+              fontSize: "clamp(9px,0.9vw,14px)",
+letterSpacing: "0.8em",
+fontWeight: 300,
             }}
           >
             Rakesh Sharma Design
@@ -227,27 +242,28 @@ const THEME_COLORS = {
         {/* MENU BUTTON */}
         <div className="flex justify-end gap-6">
           <button
-            onClick={toggleMenu}
-            className="
-              w-[48px]
-              h-[48px]
-              md:w-[62px]
-              md:h-[62px]
-              rounded-full
-              flex
-              items-center
-              justify-center
-            "
-            style={{
-              border: "1px solid rgba(255,255,255,0.12)",
-              background: "rgba(255,255,255,0.05)",
-            }}
-          >
-            <div className="flex flex-col gap-[4px]">
-              <span className="block w-[20px] h-px bg-white" />
-              <span className="block w-[20px] h-px bg-white" />
-            </div>
-          </button>
+  onClick={toggleMenu}
+  className="
+    w-[52px]
+    h-[52px]
+    rounded-full
+    flex
+    items-center
+    justify-center
+    transition-all
+    duration-500
+    hover:scale-105
+  "
+  style={{
+    border: "1px solid rgba(255,255,255,0.10)",
+    background: "rgba(255,255,255,0.03)",
+  }}
+>
+  <div className="flex flex-col gap-[6px]">
+    <span className="block w-[18px] h-px bg-white/70" />
+    <span className="block w-[18px] h-px bg-white/70" />
+  </div>
+</button>
 
            {(location.pathname === "/studio" ||
   location.pathname === "/contact") && (

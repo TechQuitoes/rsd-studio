@@ -62,14 +62,10 @@ const INSTAGRAM_IMAGES = [
   'assets/timeless.jpeg',
 ];
 
-
-
 export default function Studio() {
   const [activeTab, setActiveTab] = useState('residential');
   const [showMore, setShowMore] = useState(false);
-
   const [pillStyle, setPillStyle] = useState({ left: 0, width: 0 });
-  /* track if the hero is "compact" (mobile portrait) */
   const [isMobile, setIsMobile] = useState(false);
 
   const containerRef = useRef(null);
@@ -78,12 +74,13 @@ export default function Studio() {
   const drawerRef = useRef(null);
 
   const { theme, setTheme } = useTheme();
-
-const bgColor = theme;
+  const bgColor = theme;
   const panel = PANELS[activeTab];
-useEffect(() => {
-    setTheme("#0a1f16");
+
+  useEffect(() => {
+    setTheme('#0a1f16');
   }, [setTheme]);
+
   /* ── responsive breakpoint tracker ── */
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 768px)');
@@ -126,16 +123,20 @@ useEffect(() => {
     parallaxItems?.forEach(container => {
       const img = container.querySelector('.parallax-img');
       if (!img) return;
-      gsap.fromTo(img, { yPercent: -20 }, {
-        yPercent: 10,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: container,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true,
-        },
-      });
+      gsap.fromTo(
+        img,
+        { yPercent: -20 },
+        {
+          yPercent: 10,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: container,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          },
+        }
+      );
     });
 
     ScrollTrigger.create({
@@ -191,15 +192,13 @@ useEffect(() => {
     ScrollTrigger.refresh();
   }, [showMore]);
 
+  /* ── horizontal padding shared by main canvas and instagram strip ── */
+  const hPad = 'clamp(24px, 5vw, 72px)';
+
   return (
     <div ref={containerRef} style={{ '--bg-canvas': bgColor }}>
 
       {/* ─── STICKY HERO ─────────────────────────────────────────── */}
-      {/*
-        Mobile  : hero is not "sticky" (too short to be useful);
-                  just a normal block at natural height.
-        Desktop : sticky, 100dvh
-      */}
       <div
         className="luxury-hero-container w-full overflow-hidden bg-white"
         style={{
@@ -207,30 +206,31 @@ useEffect(() => {
           top: 0,
           height: isMobile ? 'auto' : '100dvh',
           zIndex: 1,
-          paddingTop: '85px',
+          paddingTop: '80px',
         }}
       >
-        {/* Header grid */}
+        {/* Header text row */}
         <div
-          className="marquee-header-grid border-b border-black/[0.06]"
+          className="marquee-header-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-            padding: 'clamp(16px, 4vw, 40px) clamp(16px, 5vw, 48px)',
-            paddingBottom: 'clamp(12px, 2vw, 20px)',
+            padding: `clamp(14px, 3vw, 32px) ${hPad}`,
+            paddingBottom: 'clamp(10px, 1.5vw, 18px)',
             gap: '8px',
+            borderBottom: '1px solid rgba(0,0,0,0.06)',
           }}
         >
           <h2
             className="marquee-h2 font-sans font-light uppercase leading-[1.1]"
-            style={{ fontSize: 'clamp(18px, 3.8vw, 64px)', letterSpacing: '-0.01em' }}
+            style={{ fontSize: 'clamp(16px, 3.5vw, 56px)', letterSpacing: '-0.01em' }}
           >
             Interiors Portfolio |
           </h2>
           <h2
             className="marquee-h2 font-sans font-light uppercase leading-[1.1]"
             style={{
-              fontSize: 'clamp(18px, 3.8vw, 64px)',
+              fontSize: 'clamp(16px, 3.5vw, 56px)',
               letterSpacing: '-0.02em',
               textAlign: isMobile ? 'left' : 'right',
             }}
@@ -242,7 +242,7 @@ useEffect(() => {
         {/* Split hero images */}
         <div
           className="grid grid-cols-2 w-full"
-          style={{ height: isMobile ? 'clamp(200px, 50vw, 360px)' : 'calc(100dvh - 185px)' }}
+          style={{ height: isMobile ? 'clamp(180px, 48vw, 340px)' : 'calc(100dvh - 170px)' }}
         >
           {['/assets/studio1.jpeg', '/assets/studio2.jpeg'].map((src, i) => (
             <div key={i} className="relative w-full h-full overflow-hidden">
@@ -265,74 +265,92 @@ useEffect(() => {
           backgroundColor: bgColor,
           display: 'flex',
           flexDirection: 'column',
-          gap: 'clamp(60px, 10vw, 100px)',
-          padding: 'clamp(60px, 10vw, 120px) clamp(16px, 5vw, 48px) clamp(50px, 8vw, 100px)',
+          /* consistent vertical gap between every section */
+          gap: 'clamp(48px, 8vw, 90px)',
+          paddingTop: 'clamp(48px, 8vw, 90px)',
+          paddingBottom: 'clamp(48px, 8vw, 90px)',
+          paddingLeft: hPad,
+          paddingRight: hPad,
         }}
       >
-        {/* Theme swatches */}
-        
 
-        {/* Studio manifesto */}
+        {/* ── Studio manifesto ── */}
         <div
-          className="border-b border-white/[0.08] pb-[80px] mb-5"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
-            gap: 'clamp(24px, 6vw, 60px)',
+            gridTemplateColumns: isMobile ? '1fr' : '200px 1fr',
+            gap: 'clamp(20px, 5vw, 56px)',
+            alignItems: 'start',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
+            paddingBottom: 'clamp(40px, 6vw, 72px)',
           }}
         >
           <div
-            className="text-[11px] uppercase text-white/60 font-medium"
-            style={{ letterSpacing: '0.25em' }}
+            className="text-[10px] uppercase text-white/60 font-medium"
+            style={{ letterSpacing: '0.25em', paddingTop: '4px' }}
           >
             The Manifesto
           </div>
-          <div
-            className="font-sans font-light leading-[1.4] text-white"
-            style={{ fontSize: 'clamp(16px, 2.2vw, 32px)' }}
+          <p
+            className="font-sans font-light text-white"
+            style={{
+              fontSize: 'clamp(15px, 1.8vw, 26px)',
+              lineHeight: 1.35,
+              margin: 0,
+            }}
           >
-            We design spaces that balance geometric exactness with functional weight. Our studio shapes architectures that hold lasting gravity.
-          </div>
+            We design spaces that balance geometric exactness with functional weight.
+            Our studio shapes architectures that hold lasting gravity.
+          </p>
         </div>
 
         {/* ── STICKY TABS ── */}
-        {/*
-          On mobile the tab pill nav gets a horizontal scroll wrapper so
-          all three tabs are always reachable even on 320 px screens.
-        */}
         <div
-          className="sticky z-50 w-full py-[15px] mb-5 pointer-events-none"
-          style={{ top: isMobile ? '60px' : '100px' }}
+          className="sticky z-50 pointer-events-none"
+          style={{ top: isMobile ? '58px' : '88px' }}
         >
-          <div className="overflow-x-auto pointer-events-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div
+            className="overflow-x-auto pointer-events-auto"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             <div
               ref={tabsNavRef}
-              className="relative flex gap-[6px] p-[6px] rounded-[40px] w-max shadow-[0_20px_40px_rgba(0,0,0,0.2)]"
+              className="relative flex gap-[5px] w-max"
               style={{
+                padding: '5px',
+                borderRadius: '40px',
                 background: 'rgba(255,255,255,0.05)',
-                backdropFilter: 'blur(15px)',
-                WebkitBackdropFilter: 'blur(15px)',
+                backdropFilter: 'blur(14px)',
+                WebkitBackdropFilter: 'blur(14px)',
                 border: '1px solid rgba(255,255,255,0.08)',
+                boxShadow: '0 16px 36px rgba(0,0,0,0.18)',
               }}
             >
               {/* Sliding pill */}
               <div
-                className="tab-pill absolute top-[6px] h-[calc(100%-12px)] bg-white rounded-[30px] z-[1] pointer-events-none transition-all duration-300"
-                style={{ left: pillStyle.left + 'px', width: pillStyle.width + 'px' }}
+                className="tab-pill absolute top-[5px] h-[calc(100%-10px)] bg-white z-[1] pointer-events-none transition-all duration-300"
+                style={{
+                  left: pillStyle.left + 'px',
+                  width: pillStyle.width + 'px',
+                  borderRadius: '30px',
+                }}
               />
               {TABS.map(tab => (
                 <button
                   key={tab.id}
                   ref={el => (tabRefs.current[tab.id] = el)}
                   onClick={() => handleTabChange(tab.id)}
-                  className={`relative z-[2] text-[11px] uppercase font-medium rounded-[30px] bg-transparent border-none cursor-pointer transition-all duration-300 ${
-                    activeTab === tab.id ? 'opacity-100 text-black' : 'opacity-50 text-white'
-                  }`}
+                  className="relative z-[2] bg-transparent border-none cursor-pointer transition-all duration-300"
                   style={{
+                    fontSize: '10px',
                     letterSpacing: '0.18em',
-                    padding: isMobile ? '10px 18px' : '12px 28px',
+                    textTransform: 'uppercase',
+                    fontWeight: 500,
+                    borderRadius: '30px',
+                    padding: isMobile ? '9px 16px' : '11px 26px',
                     whiteSpace: 'nowrap',
-                    color: activeTab === tab.id ? '#000' : '#fff',
+                    color: activeTab === tab.id ? '#000' : 'rgba(255,255,255,0.5)',
+                    transition: 'color 0.3s',
                   }}
                 >
                   {tab.label}
@@ -343,37 +361,57 @@ useEffect(() => {
         </div>
 
         {/* ── GALLERY PANEL ── */}
-        <div className="active-gallery-panel flex flex-col" style={{ gap: 'clamp(60px, 8vw, 100px)' }}>
-          {/* Manifesto block */}
+        <div className="active-gallery-panel flex flex-col" style={{ gap: 'clamp(48px, 7vw, 88px)' }}>
+
+          {/* Panel heading + description */}
           <div
-            className="border-b border-white/[0.08] pb-[60px]"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
-              gap: 'clamp(24px, 6vw, 80px)',
+              gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+              gap: 'clamp(20px, 5vw, 72px)',
+              alignItems: 'end',
+              borderBottom: '1px solid rgba(255,255,255,0.08)',
+              paddingBottom: 'clamp(32px, 5vw, 56px)',
             }}
           >
             <h3
-              className="font-sans font-light uppercase leading-[1.15] text-white"
-              style={{ fontSize: 'clamp(22px, 3.5vw, 46px)', letterSpacing: '-0.01em' }}
+              className="font-sans font-light uppercase text-white"
+              style={{
+                fontSize: 'clamp(20px, 3.2vw, 42px)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.01em',
+                margin: 0,
+              }}
             >
               {panel.heading.split('\n').map((line, i) => (
-                <span key={i}>{line}{i === 0 && <br />}</span>
+                <span key={i}>
+                  {line}
+                  {i === 0 && <br />}
+                </span>
               ))}
             </h3>
-            <p className="text-[16px] leading-[1.75] font-light text-white/75 self-end">
+            <p
+              className="font-sans font-light text-white/70"
+              style={{
+                fontSize: 'clamp(13px, 1.1vw, 15px)',
+                lineHeight: 1.75,
+                margin: 0,
+              }}
+            >
               {panel.description}
             </p>
           </div>
 
-          {/* Image rows */}
-          <div className="flex flex-col" style={{ gap: 'clamp(40px, 8vw, 100px)' }}>
+          {/* Image grid rows */}
+          <div className="flex flex-col" style={{ gap: 'clamp(32px, 6vw, 80px)' }}>
+
             {/* Row 1 */}
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-                gap: '40px',
+                gap: 'clamp(16px, 3vw, 40px)',
+                alignItems: 'start',
               }}
             >
               {panel.images.slice(0, 2).map((img, i) => (
@@ -386,7 +424,8 @@ useEffect(() => {
               style={{
                 display: 'grid',
                 gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-                gap: '40px',
+                gap: 'clamp(16px, 3vw, 40px)',
+                alignItems: 'start',
               }}
             >
               {panel.images.slice(2, 4).map((img, i) => (
@@ -394,7 +433,7 @@ useEffect(() => {
               ))}
             </div>
 
-            {/* Drawer */}
+            {/* Expandable drawer */}
             <div ref={drawerRef} style={{ height: 0, overflow: 'hidden', opacity: 0 }}>
               <div
                 className="graphic-panel parallax-container relative overflow-hidden w-full"
@@ -409,8 +448,18 @@ useEffect(() => {
                 </div>
                 {panel.extraTitle && (
                   <div className="panel-meta-overlay">
-                    <h4 className="text-[18px] font-light uppercase mb-[5px] text-white">{panel.extraTitle}</h4>
-                    <p className="text-[11px] uppercase text-white/60" style={{ letterSpacing: '1.5px' }}>{panel.extraCat}</p>
+                    <h4
+                      className="font-light uppercase text-white"
+                      style={{ fontSize: '16px', marginBottom: '4px' }}
+                    >
+                      {panel.extraTitle}
+                    </h4>
+                    <p
+                      className="uppercase text-white/60"
+                      style={{ fontSize: '10px', letterSpacing: '1.5px' }}
+                    >
+                      {panel.extraCat}
+                    </p>
                   </div>
                 )}
               </div>
@@ -418,36 +467,56 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Toggle button */}
-        <div className="flex justify-center pt-5">
+        {/* ── Toggle button ── */}
+        <div className="flex justify-center">
           <button
             onClick={() => setShowMore(prev => !prev)}
-            className="bg-transparent border border-white/[0.08] text-white text-[11px] uppercase font-medium cursor-pointer transition-all duration-300 hover:bg-white hover:text-black hover:border-white"
+            className="bg-transparent text-white cursor-pointer transition-all duration-300 hover:bg-white hover:text-black"
             style={{
+              border: '1px solid rgba(255,255,255,0.15)',
+              fontSize: '10px',
               letterSpacing: '0.2em',
-              padding: isMobile ? '14px 28px' : '16px 40px',
+              textTransform: 'uppercase',
+              fontWeight: 500,
+              padding: isMobile ? '13px 26px' : '14px 38px',
             }}
           >
             {showMore ? 'Collapse Gallery' : 'Show More Elements'}
           </button>
         </div>
 
-        {/* Instagram ticker */}
+        {/* ── Instagram ticker ── full-bleed strip ── */}
         <div
-          className="border-t border-white/[0.08] pt-[60px] overflow-hidden"
-          style={{ width: '100vw', marginLeft: 'calc(-1 * clamp(16px, 5vw, 48px))' }}
+          style={{
+            borderTop: '1px solid rgba(255,255,255,0.08)',
+            paddingTop: 'clamp(36px, 5vw, 60px)',
+            /* pull it edge-to-edge against main canvas padding */
+            width: `calc(100% + 2 * ${hPad})`,
+            marginLeft: `calc(-1 * ${hPad})`,
+            overflow: 'hidden',
+          }}
         >
-          <h3
-            className="text-[11px] uppercase text-white/50 mb-[30px]"
-            style={{ letterSpacing: '0.3em', paddingLeft: 'clamp(16px, 5vw, 48px)' }}
+          <p
+            className="uppercase text-white/50"
+            style={{
+              fontSize: '10px',
+              letterSpacing: '0.3em',
+              marginBottom: '24px',
+              paddingLeft: hPad,
+            }}
           >
             Instagram / @RakeshSharmaDesigns
-          </h3>
+          </p>
           <Marquee
             items={INSTAGRAM_IMAGES.map(src => (
               <div
-                className="overflow-hidden mr-4 flex-shrink-0"
-                style={{ width: 'clamp(200px, 30vw, 320px)', height: 'clamp(200px, 30vw, 320px)' }}
+                key={src}
+                className="overflow-hidden flex-shrink-0"
+                style={{
+                  width: 'clamp(180px, 28vw, 300px)',
+                  height: 'clamp(180px, 28vw, 300px)',
+                  marginRight: '12px',
+                }}
               >
                 <img
                   src={src}
@@ -474,7 +543,8 @@ function ImageCard({ img, isMobile }) {
       className="graphic-panel parallax-container relative overflow-hidden"
       style={{
         aspectRatio: '3/4',
-        marginTop: !isMobile && img.offset ? '80px' : 0,
+        /* offset only on desktop, and only for right-column cards */
+        marginTop: !isMobile && img.offset ? '72px' : 0,
         width: '100%',
       }}
     >
@@ -486,8 +556,18 @@ function ImageCard({ img, isMobile }) {
         />
       </div>
       <div className="panel-meta-overlay">
-        <h4 className="text-[18px] font-light uppercase mb-[5px] text-white">{img.title}</h4>
-        <p className="text-[11px] uppercase text-white/60" style={{ letterSpacing: '1.5px' }}>{img.cat}</p>
+        <h4
+          className="font-light uppercase text-white"
+          style={{ fontSize: 'clamp(13px, 1.2vw, 16px)', marginBottom: '4px' }}
+        >
+          {img.title}
+        </h4>
+        <p
+          className="uppercase text-white/60"
+          style={{ fontSize: '10px', letterSpacing: '1.5px' }}
+        >
+          {img.cat}
+        </p>
       </div>
     </div>
   );
