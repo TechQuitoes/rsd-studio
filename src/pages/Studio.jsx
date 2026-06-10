@@ -495,7 +495,7 @@ export default function Studio() {
         </div>
 
         {/* ── GALLERY PANEL ── */}
-        <div className="active-gallery-panel flex flex-col" style={{ gap: 'clamp(48px, 7vw, 88px)' }}>
+        <div className="active-gallery-panel flex flex-col" style={{ gap: 'clamp(48px, 3vw, 50px)' }}>
 
           {/* Panel heading + description */}
           <div
@@ -503,7 +503,7 @@ export default function Studio() {
               display: 'grid',
               gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
               gap: 'clamp(20px, 5vw, 72px)',
-              alignItems: 'end',
+              alignItems: 'start',
               borderBottom: '1px solid rgba(255,255,255,0.08)',
               paddingBottom: 'clamp(32px, 5vw, 56px)',
             }}
