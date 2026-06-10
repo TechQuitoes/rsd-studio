@@ -291,10 +291,45 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="text-[13.5px] leading-[1.5] pt-10 font-light" style={{ color: t.muted }}>
-              <p className="font-medium mb-1" style={{ color: t.text }}>Rakesh Sharma Designs</p>
-              <p>Indore, Madhya Pradesh, India</p>
-            </div>
+            <div className="text-[13.5px] leading-[1.4] pt-2 font-light" style={{ color: t.muted }}>
+  
+
+  <p className=" text-black">
+    <span className="font-semibold opacity-50" style={{ color: t.text }}>
+      Office Location:
+    </span>
+    <br />
+    121, Rafael Tower, Old Palasia,
+    <br />
+    Indore, Madhya Pradesh 452016
+  </p>
+
+  <p className="mt-2">
+    <span className="font-semibold opacity-50" style={{ color: t.text }}>
+      Call for Consultation:
+    </span>
+    
+    <a
+      href="tel:+919773510007"
+      style={{ color: t.text, textDecoration: "none" }}
+    >
+      +91 9773510007
+    </a>
+  </p>
+
+  <p className="mt-2">
+    <span className="font-semibold opacity-50" style={{ color: t.text }}>
+      Email:
+    </span>
+    
+    <a
+      href="mailto:raksinterior@gmail.com"
+      style={{ color: t.text, textDecoration: "none" }}
+    >
+      raksinterior@gmail.com
+    </a>
+  </p>
+</div>
           </aside>
 
           {/* ── COLUMN 2: FORM ── */}
