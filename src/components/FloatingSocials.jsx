@@ -56,7 +56,7 @@ export default function FloatingSocials() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={icon.name}
-            className="block w-5 h-5 transition-all duration-300 hover:scale-[1.12]"
+            className="block w-5 h-5 transition-all duration-300 hover:scale-[2.12]"
             style={{
   
   color:

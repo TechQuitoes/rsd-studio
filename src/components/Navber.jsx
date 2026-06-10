@@ -184,14 +184,11 @@ origin-left
     rounded-full
     overflow-hidden
   "
-  style={{
-    background:
-      "linear-gradient(180deg, rgba(24,24,24,0.95) 0%, rgba(18,18,18,0.98) 100%)",
-    backdropFilter: "blur(20px)",
-    WebkitBackdropFilter: "blur(20px)",
+   style={{
+    background: "rgba(0,0,0,0.38)",
+    backdropFilter: "blur(18px)",
+    WebkitBackdropFilter: "blur(18px)",
     border: "1px solid rgba(255,255,255,0.08)",
-    boxShadow:
-      "0 10px 40px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05)",
   }}
 >
         {/* LEFT LOGO */}
@@ -231,7 +228,7 @@ origin-left
             "
             style={{
               fontSize: "clamp(9px,0.9vw,14px)",
-letterSpacing: "0.8em",
+letterSpacing: "0.3em",
 fontWeight: 300,
             }}
           >
@@ -273,8 +270,8 @@ fontWeight: 300,
         key={key}
         onClick={() => setTheme(color)}
         className={`
-          w-[14px]
-          h-[14px]
+          w-[20px]
+          h-[20px]
           rounded-full
           transition-all
           duration-300

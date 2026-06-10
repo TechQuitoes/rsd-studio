@@ -27,43 +27,33 @@ const PANELS = {
     ],
     extra: [
   {
-    src: '/assets/res6.jpeg',
+    src: '/assets/re1.jpeg',
     title: 'Residential 01',
     cat: 'Residential',
   },
   {
-    src: '/assets/res7.jpeg',
+    src: '/assets/re2.jpeg',
     title: 'Residential 02',
     cat: 'Residential',
   },
   {
-    src: '/assets/res8.jpeg',
+    src: '/assets/re3.jpeg',
     title: 'Residential 03',
     cat: 'Residential',
   },
-   { src: 'assets/res9.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential'},
-    { src: 'assets/res10.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential' },
-     { src: 'assets/res11.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
-      { src: 'assets/res12.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential' },
-       { src: 'assets/res13.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-        { src: 'assets/res14.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-         { src: 'assets/res15.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-          { src: 'assets/res16.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
-    { src: 'assets/res17.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
-    { src: 'assets/res18.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
-    { src: 'assets/res19.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
-    { src: 'assets/res20.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-    { src: 'assets/res21.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-    { src: 'assets/res22.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },  
-    { src: 'assets/res23.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-    { src: 'assets/res24.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
-    { src: 'assets/res25.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
-    { src: 'assets/res26.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-    { src: 'assets/res27.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-    { src: 'assets/res28.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-    { src: 'assets/res29.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-    { src: 'assets/res30.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
-      { src: 'assets/res31.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+   { src: 'assets/re4.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential'},
+    { src: 'assets/re5.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential' },
+    { src: 'assets/re6.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/re7.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential' },
+    { src: 'assets/re8.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/re9.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/re10.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/re11.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/re12.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/re13.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/re14.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential', },
+    { src: 'assets/re15.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
+    { src: 'assets/re16.jpeg', title: 'Hillcrest Estate Salon', cat: 'Residential',  },
     
 
 
@@ -81,53 +71,25 @@ const PANELS = {
       'Scaling high-impact sensory architecture for the public landscape. These installations focus entirely on community interaction dynamics.',
     images: [
       { src: 'assets/Comm1.jpeg', title: 'The Bureau Collective', cat: 'Commercial Space', offset: false },
-      { src: 'assets/comm2.jpeg', title: 'Aura Social Club Lounge', cat: 'Hospitality Hub', offset: true },
+      { src: '/assets/co1.jpeg', title: 'Aura Social Club Lounge', cat: 'Hospitality Hub', },
       { src: 'assets/comm3.jpeg', title: 'Monolith Boutique Showroom', cat: 'Retail Exhibit', offset: false },
-      { src: 'assets/comm4.jpeg', title: 'Verdant Concept Lounge', cat: 'Commercial Interior', offset: true },
+      { src: '/assets/co2.jpeg', title: 'Verdant Concept Lounge', cat: 'Commercial Interior',  },
     ],
     extra: [
+  
   {
-    src: '/assets/res6.jpeg',
-    title: 'Commercial Space 01',
-    cat: 'Commercial',
-  },
-  {
-    src: '/assets/res7.jpeg',
+    src: '/assets/co4.jpeg',
     title: 'Commercial Space 02',
     cat: 'Commercial',
   },
   {
-    src: '/assets/res8.jpeg',
+    src: '/assets/co5.jpeg',
     title: 'Commercial Space 03',
     cat: 'Commercial',
   },
-   { src: 'assets/com6.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial'},
-    { src: 'assets/com7.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
-     { src: 'assets/com8.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
-      { src: 'assets/com9.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
-       { src: 'assets/com10.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-        { src: 'assets/com11.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-         { src: 'assets/com12.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-          { src: 'assets/com13.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
-    { src: 'assets/com14.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
-    { src: 'assets/com15.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
-    { src: 'assets/com16.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
-    { src: 'assets/com17.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-    { src: 'assets/com18.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-    { src: 'assets/com19.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },  
-    { src: 'assets/com20.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-    { src: 'assets/com21.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
-    { src: 'assets/com22.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial', },
-    { src: 'assets/com23.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-    { src: 'assets/com24.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-    { src: 'assets/com25.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-    { src: 'assets/com26.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-    { src: 'assets/com27.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-      { src: 'assets/com28.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-      { src: 'assets/com29.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial',  },
-      
-    
-
+  { src: 'assets/co6.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial'},
+  { src: 'assets/co7.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
+ 
 
           
     
@@ -149,35 +111,21 @@ const PANELS = {
     ],
      extra: [
   {
-    src: '/assets/res6.jpeg',
+    src: '/assets/offi5.jpeg',
     title: 'Commercial Space 01',
     cat: 'Offices',
   },
   {
-    src: '/assets/res7.jpeg',
+    src: '/assets/offi7.jpeg',
     title: 'Commercial Space 02',
     cat: 'Offices',
   },
   {
-    src: '/assets/res8.jpeg',
+    src: '/assets/offi6.jpeg',
     title: 'Commercial Space 03',
     cat: 'Offices',
   },
-   { src: 'assets/offi6.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices'},
-    { src: 'assets/offi7.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices' },
-     { src: 'assets/offi8.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
-      { src: 'assets/offi9.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices' },
-       { src: 'assets/offi10.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
-        { src: 'assets/offi11.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
-         { src: 'assets/offi12.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
-          { src: 'assets/offi13.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
-    { src: 'assets/offi14.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
-    { src: 'assets/offi15.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
-    { src: 'assets/offi16.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices', },
-    { src: 'assets/offi17.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
-    { src: 'assets/offi18.jpeg', title: 'Hillcrest Estate Salon', cat: 'Offices',  },
-   
-
+  
 
           
     
