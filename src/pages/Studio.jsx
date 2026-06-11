@@ -275,57 +275,93 @@ export default function Studio() {
   }, [showMore]);
 
   /* ── horizontal padding shared by main canvas and instagram strip ── */
-  const hPad = 'clamp(24px, 5vw, 72px)';
+useGSAP(() => {
+  const tl = gsap.timeline();
 
+  tl.to("#backdrop", {
+    scaleX: 1,
+    duration: 1.8,
+    ease: "power4.out",
+  })
+
+  .to(
+    ".banner-heading",
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power4.out",
+    },
+    "-=0.8"
+  );
+
+}, { scope: containerRef });
+const hPad = 'clamp(24px, 5vw, 72px)';
   return (
     <div ref={containerRef} style={{ '--bg-canvas': bgColor }}>
 
       {/* ─── STICKY HERO ─────────────────────────────────────────── */}
       <div
-        className="luxury-hero-container w-full overflow-hidden bg-white"
-        style={{
-          position: isMobile ? 'relative' : 'sticky',
-          top: 0,
-          height: isMobile ? 'auto' : '100dvh',
-          zIndex: 1,
-          paddingTop: '80px',
-        }}
-      >
+  className={`
+    w-full overflow-hidden bg-white/70 z-[1]
+    ${isMobile ? 'relative h-auto' : 'sticky top-0 h-screen'}
+  `}
+>
         {/* Header text row */}
         <div
-          className="marquee-header-grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
-            padding: `clamp(14px, 3vw, 32px) ${hPad}`,
-            paddingBottom: 'clamp(10px, 1.5vw, 18px)',
-            gap: '8px',
-            borderBottom: '1px solid rgba(0,0,0,0.06)',
-          }}
-        >
-          <h2
-            className="marquee-h2 font-sans font-light uppercase leading-[1.1]"
-            style={{ fontSize: 'clamp(16px, 3.5vw, 56px)', letterSpacing: '-0.01em' }}
-          >
-            Interiors Portfolio |
-          </h2>
-          <h2
-            className="marquee-h2 font-sans font-light uppercase leading-[1.1]"
-            style={{
-              fontSize: 'clamp(16px, 3.5vw, 56px)',
-              letterSpacing: '-0.02em',
-              textAlign: isMobile ? 'left' : 'right',
-            }}
-          >
-            Exhibition | Showcase
-          </h2>
-        </div>
+  className="
+    absolute top-1/2 left-0 w-full z-[2]
+    grid grid-cols-1 md:grid-cols-2
+    gap-2
+    px-6 md:px-12 lg:px-16
+    pt-5 pb-5
+       to-transparent
+  "
+>
+   
+  <div
+  
+    id="backdrop"
+    className="
+      absolute inset-0
+      bg-white/70
+      origin-left
+      scale-x-0
+      z-0
+    "
+  />
+
+  <h2
+    className="banner-heading relative z-10 font-sans font-light uppercase leading-[1.1] opacity-0 translate-y-8"
+    style={{
+      fontSize: 'clamp(16px, 3.5vw, 56px)',
+      letterSpacing: '-0.01em',
+    }}
+  >
+    RSD PORTFOLIO
+  </h2>
+
+  <h2
+    className="banner-heading relative z-10 font-sans font-light uppercase leading-[1.1] opacity-0 translate-y-8"
+    style={{
+      fontSize: 'clamp(16px, 3.5vw, 56px)',
+      letterSpacing: '-0.02em',
+      textAlign: isMobile ? 'left' : 'right',
+    }}
+  >
+    MEETS OUR DESIGN
+  </h2>
+</div>
+
+
 
         {/* Split hero images */}
         <div
-          className="grid grid-cols-2 w-full"
-          style={{ height: isMobile ? 'clamp(180px, 48vw, 340px)' : 'calc(100dvh - 170px)' }}
-        >
+  className={`grid grid-cols-2 w-full ${
+    isMobile ? 'h-[280px]' : 'h-screen'
+  }`}
+>
           {['/assets/studio1.jpeg', '/assets/studio2.jpeg'].map((src, i) => (
             <div key={i} className="relative w-full h-full overflow-hidden">
               <img
