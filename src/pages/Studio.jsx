@@ -339,7 +339,7 @@ const hPad = 'clamp(24px, 5vw, 72px)';
       letterSpacing: '-0.01em',
     }}
   >
-    RSD PORTFOLIO
+    Designed For Life
   </h2>
 
   <h2
@@ -350,7 +350,7 @@ const hPad = 'clamp(24px, 5vw, 72px)';
       textAlign: isMobile ? 'left' : 'right',
     }}
   >
-    MEETS OUR DESIGN
+    Built For Legacy
   </h2>
 </div>
 
