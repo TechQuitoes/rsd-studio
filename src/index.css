@@ -24,6 +24,22 @@ body {
 }
 
 /* Preloader */
+
+@keyframes cinematicZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.preloader-title {
+  animation: cinematicZoom 2.2s ease forwards;
+}
 .preloader {
   position: fixed;
   inset: 0;

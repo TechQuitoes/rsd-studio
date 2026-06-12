@@ -109,7 +109,7 @@ export default function Journal() {
       >
         <div id="heroImgPane" className="w-full h-full overflow-hidden max-lg:h-[45vh]">
           <img
-            src="/assets/jour1.jpeg"
+            src="/assets/rakesh_sonali03.jpg"
             alt="Studio Entrance"
             className="w-full h-full object-cover scale-[1.05]"
           />
@@ -173,14 +173,14 @@ export default function Journal() {
               name: 'Rakesh Sharma',
               role: 'Interior Design Consultant',
               bio: 'Rakesh manages structural layouts and spatial blueprints, ensuring raw masonry elements interact beautifully with light and alignment bounds.',
-              img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=90',
+              img: '/assets/rakesh011.jpg',
               offset: false,
             },
             {
               name: 'Sonali Sharma',
               role: 'Design Inspiration & Director',
               bio: 'Sonali steers the artistic vision of the studio. Her detailed thoughts define the custom fabric combinations, material styling layers, and authentic details.',
-              img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=90',
+              img: '/assets/sonali01.jpg',
               offset: true,
             },
           ].map(person => (

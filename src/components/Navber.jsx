@@ -5,9 +5,10 @@ import gsap from "gsap";
 import { useTheme } from "../context/ThemeContext";
 
 const NAV_LINKS = [
-  { label: "Projects", to: "/project" },
+  
   { label: "Studio", to: "/studio" },
   { label: "Journal", to: "/journal" },
+  { label: "Projects", to: "/project" },
   { label: "Contact", to: "/contact" },
 ];
 

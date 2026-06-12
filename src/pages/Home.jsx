@@ -91,24 +91,32 @@ export default function Home() {
   return (
     <div ref={containerRef} className="overflow-hidden">
       {/* PRELOADER */}
-      <div
-        className={`fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center transition-all duration-1000 ${
-          loaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
-      >
-        <h1
-          className="text-white uppercase font-serif text-center px-6"
-          style={{ fontSize: 'clamp(18px, 5vw, 42px)', letterSpacing: '0.3em' }}
-        >
-          Rakesh Sharma Design
-        </h1>
-        <p
-          className="mt-4 text-white/40 uppercase text-center"
-          style={{ fontSize: 'clamp(9px, 2vw, 11px)', letterSpacing: '0.4em' }}
-        >
-          Architectural Elegance
-        </p>
-      </div>
+     {/* PRELOADER */}
+<div
+  className={`fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center transition-all duration-1000 ${
+    loaded ? "opacity-0 pointer-events-none" : "opacity-100"
+  }`}
+>
+  <h1
+    className="preloader-title text-white uppercase font-serif text-center px-6"
+    style={{
+      fontSize: "clamp(18px, 5vw, 42px)",
+      letterSpacing: "0.3em",
+    }}
+  >
+    Rakesh Sharma Design
+  </h1>
+
+  <p
+    className="preloader-subtitle mt-4 text-white/40 uppercase text-center"
+    style={{
+      fontSize: "clamp(9px, 2vw, 11px)",
+      letterSpacing: "0.4em",
+    }}
+  >
+    Architectural Elegance
+  </p>
+</div>
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-black" style={{ height: '100dvh', minHeight: '600px' }}>
@@ -207,7 +215,8 @@ export default function Home() {
           className="quote-text font-serif text-onyx-soft leading-[1.5] max-w-[1100px]"
           style={{ fontSize: 'clamp(20px, 4.5vw, 52px)' }}
         >
-          "Simplicity is the ultimate expression of structural sophistication."
+          "For over two decades, we&#39;ve been creating interiors that blend
+elegance, functionality, and timeless design – Rakesh Sharma"
         </p>
       </section>
 

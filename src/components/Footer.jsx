@@ -192,8 +192,7 @@ export default function Footer({ theme = 'light' }) {
               className={`font-light leading-[1.6] mt-[18px] ${isDark ? 'text-white/80' : 'text-onyx-soft/80'}`}
               style={{ fontSize: 'clamp(12px, 1.3vw, 14px)' }}
             >
-              Indore, Madhya Pradesh
-              <br />India
+              Indore, Madhya Pradesh, India
             </p>
           </div>
         </div>

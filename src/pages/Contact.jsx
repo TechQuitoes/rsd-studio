@@ -54,41 +54,7 @@ const INQUIRY_TYPES = [
   { value: 'general', label: 'General Inquiry' },
 ];
 
-const SOCIAL_ICONS = [
-  {
-    name: 'Instagram',
-    full: (
-      <>
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-      </>
-    ),
-  },
-  {
-    name: 'Facebook',
-    full: <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />,
-  },
-  {
-    name: 'LinkedIn',
-    full: (
-      <>
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-        <rect x="2" y="9" width="4" height="12" />
-        <circle cx="4" cy="4" r="2" />
-      </>
-    ),
-  },
-  {
-    name: 'YouTube',
-    full: (
-      <>
-        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-      </>
-    ),
-  },
-];
+
 
 /* ── Floating Label Input ── */
 function FloatingLabel({ id, label, type = 'text', required = false, textArea = false }) {
@@ -173,6 +139,7 @@ export default function Contact() {
   };
 
   return (
+    
     <div
       ref={containerRef}
       className="min-h-screen font-sans transition-colors duration-700"
@@ -183,31 +150,7 @@ export default function Contact() {
         '--contact-border': t.border,
       }}
     >
-      {/* ── FLOATING SOCIAL DOCK (desktop only) ── */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 flex-col gap-[22px] z-[999] hidden lg:flex">
-        {SOCIAL_ICONS.map(icon => (
-          <a
-            key={icon.name}
-            href="https://www.instagram.com/rakeshsharmadesigns/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={icon.name}
-            className="block w-5 h-5 transition-all duration-300 hover:scale-[1.12]"
-            style={{ color: theme === '#f4f0ea'? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.45)' }}
-            onMouseEnter={e => (e.currentTarget.style.color = '#c5a880')}
-            onMouseLeave={e =>
-              (e.currentTarget.style.color =
-                theme === '#f4f0ea' ? 'rgba(0,0,0,0.4)' : 'rgba(255,255,255,0.45)')
-            }
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
-              strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-              {icon.full}
-            </svg>
-          </a>
-        ))}
-      </div>
-
+      
       {/* ── FLOATING WHATSAPP ── */}
       <a
         href="https://wa.me/919999999999?text=Hello%20Rakesh%20Sharma%20Designs"
@@ -223,7 +166,29 @@ export default function Contact() {
       </a>
 
       {/* ── TOP NAV ── */}
-      
+      <section
+  className="relative w-full"
+  style={{
+    background: "#f4f0ea",
+    borderTop: "1px solid rgba(0,0,0,.08)",
+    borderBottom: "1px solid rgba(0,0,0,.08)",
+    paddingTop: "83px",
+  }}
+>
+  <div className="relative h-[280px] md:h-[420px] lg:h-[500px] overflow-hidden">
+    <img
+      src="/assets/rakesh_sonali07.jpg"
+      alt="Rakesh Sharma Designs"
+      className="
+        w-full
+        h-full
+        object-cover
+        grayscale
+        scale-105
+      "
+    />
+  </div>
+</section>
 
       {/* ── MAIN CONTENT ── */}
       {/*
@@ -235,7 +200,7 @@ export default function Contact() {
       */}
       <div
         className="w-full max-w-[1350px] mx-auto "
-        style={{ paddingTop: 'clamp(100px, 14vw, 140px)', paddingBottom: 'clamp(60px, 8vw, 100px)', paddingLeft: 'clamp(16px, 4vw, 40px)', paddingRight: 'clamp(16px, 4vw, 40px)' }}
+        style={{ paddingTop: 'clamp(80px, 8vw, 80px)', paddingBottom: 'clamp(60px, 8vw, 100px)', paddingLeft: 'clamp(16px, 4vw, 40px)', paddingRight: 'clamp(16px, 4vw, 40px)' }}
       >
         {/* Three-pane grid — collapses gracefully */}
         <div
@@ -294,14 +259,16 @@ export default function Contact() {
             <div className="text-[13.5px] leading-[1.4] pt-2 font-light" style={{ color: t.muted }}>
   
 
-  <p className=" text-black">
+  <p className=" ">
     <span className="font-semibold opacity-50" style={{ color: t.text }}>
       Office Location:
     </span>
+    <span style={{ color: t.text, textDecoration: "none" }}>
     <br />
     121, Rafael Tower, Old Palasia,
     <br />
     Indore, Madhya Pradesh 452016
+    </span>
   </p>
 
   <p className="mt-2">
