@@ -333,24 +333,24 @@ const hPad = 'clamp(24px, 5vw, 72px)';
   />
 
   <h2
-    className="banner-heading relative z-10 font-sans font-light uppercase leading-[1.1] opacity-0 translate-y-8"
+    className="banner-heading relative z-10 font-sans font-light  leading-[1.1] opacity-0 translate-y-8 pl-2"
     style={{
       fontSize: 'clamp(16px, 3.5vw, 56px)',
-      letterSpacing: '-0.01em',
+      letterSpacing: '0.03em',
     }}
   >
-    Designed For Life
+       Designed   For   Life
   </h2>
 
   <h2
-    className="banner-heading relative z-10 font-sans font-light uppercase leading-[1.1] opacity-0 translate-y-8"
+    className="banner-heading relative z-10 font-sans font-light leading-[1.1] opacity-0 translate-y-8"
     style={{
       fontSize: 'clamp(16px, 3.5vw, 56px)',
-      letterSpacing: '-0.02em',
+      letterSpacing: '0.03em',
       textAlign: isMobile ? 'left' : 'right',
     }}
   >
-    Built For Legacy
+    Built   For   Legacy
   </h2>
 </div>
 
