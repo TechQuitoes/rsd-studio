@@ -173,7 +173,7 @@ export default function Journal() {
               name: 'Rakesh Sharma',
               role: 'Interior Design Consultant',
               bio: 'Rakesh manages structural layouts and spatial blueprints, ensuring raw masonry elements interact beautifully with light and alignment bounds.',
-              img: '/assets/rakesh011.jpg',
+              img: '/assets/rakesh-original.jpg',
               offset: false,
             },
             {

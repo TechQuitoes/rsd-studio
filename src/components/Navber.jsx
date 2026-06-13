@@ -233,7 +233,7 @@ letterSpacing: "0.3em",
 fontWeight: 300,
             }}
           >
-            Rakesh Sharma Design
+            Rakesh Sharma Designs
           </Link>
         </div>
 
