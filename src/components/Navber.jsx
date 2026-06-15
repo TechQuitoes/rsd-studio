@@ -159,7 +159,7 @@ origin-left
 
         {/* FOOTER */}
         <div className="absolute bottom-[60px] left-8 md:left-[70px] text-[11px] tracking-[4px] uppercase text-black/50 leading-[2]">
-          studio@rakeshsharmadesign.com
+          studio@rakeshsharmadesigns.com
           <br />
           Indore — India
         </div>

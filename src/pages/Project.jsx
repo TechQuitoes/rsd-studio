@@ -427,7 +427,7 @@ export default function Project() {
             {/* End block */}
             <div style={{ flexShrink: 0, width: 360, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "24px 40px 24px 0" }}>
               <div>
-                <h4 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: "1.6rem", fontWeight: 300, letterSpacing: "-0.5px", marginBottom: 12, lineHeight: 1.3 }}>Rakesh Sharma Design</h4>
+                <h4 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: "1.6rem", fontWeight: 300, letterSpacing: "-0.5px", marginBottom: 12, lineHeight: 1.3 }}>Rakesh Sharma Designs</h4>
                 <p style={{ fontSize: "0.9rem", color: "var(--color-text-muted)", lineHeight: 1.6 }}>
                   A rigorous creative collective coordinating high-fashion residential interiors, clean structural plan envelopes, and tactile spatial material layers globally.
                 </p>

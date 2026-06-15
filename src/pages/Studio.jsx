@@ -442,7 +442,7 @@ const hPad = 'clamp(24px, 5vw, 72px)';
               margin: 0,
             }}
           >
-            We design spaces that balance geometric exactness with functional weight.
+            We designs spaces that balance geometric exactness with functional weight.
             Our studio shapes architectures that hold lasting gravity.
           </p>
         </div>

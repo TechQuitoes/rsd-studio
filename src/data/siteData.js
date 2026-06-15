@@ -31,12 +31,12 @@ export const QUOTE =
 
 // ─── Footer ─────────────────────────────────────────────────
 export const FOOTER_DATA = {
-  brand: "Rakesh Sharma Design",
+  brand: "Rakesh Sharma Designs",
   description:
     "A luxury interior & architectural studio crafting warm minimal spaces rooted in silence, elegance and structural sophistication.",
-  email: "studio@rakeshsharmadesign.com",
+  email: "studio@rakeshsharmadesigns.com",
   location: "Indore, Madhya Pradesh\nIndia",
-  copyright: "© 2026 Rakesh Sharma Design",
+  copyright: "© 2026 Rakesh Sharma Designs",
   tagline: "Quiet Luxury Framework",
   newsletter: {
     label: "Newsletter",

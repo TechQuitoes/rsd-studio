@@ -138,7 +138,7 @@ const SlideMenu = ({ isOpen, onClose }) => {
             zIndex: 2,
           }}
         >
-          studio@rakeshsharmadesign.com
+          studio@rakeshsharmadesigns.com
           <br />
           Indore — India
         </div>

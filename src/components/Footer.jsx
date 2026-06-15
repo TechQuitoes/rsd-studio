@@ -182,11 +182,11 @@ export default function Footer({ theme = 'light' }) {
               Contact
             </h4>
             <a
-              href="mailto:studio@rakeshsharmadesign.com"
+              href="mailto:studio@rakeshsharmadesigns.com"
               className={`block font-light leading-[1.6] ${isDark ? 'text-white/80' : 'text-onyx-soft/80'} break-all`}
               style={{ fontSize: 'clamp(12px, 1.3vw, 14px)' }}
             >
-              studio@rakeshsharmadesign.com
+              studio@rakeshsharmadesigns.com
             </a>
             <p
               className={`font-light leading-[1.6] mt-[18px] ${isDark ? 'text-white/80' : 'text-onyx-soft/80'}`}

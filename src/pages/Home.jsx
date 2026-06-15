@@ -104,7 +104,7 @@ export default function Home() {
       letterSpacing: "0.3em",
     }}
   >
-    Rakesh Sharma Design
+    Rakesh Sharma Designs
   </h1>
 
   <p
@@ -216,7 +216,7 @@ export default function Home() {
           style={{ fontSize: 'clamp(20px, 4.5vw, 52px)' }}
         >
           "For over two decades, we&#39;ve been creating interiors that blend
-elegance, functionality, and timeless design – Rakesh Sharma"
+elegance, functionality, and timeless designs – Rakesh Sharma"
         </p>
       </section>
 

@@ -29,7 +29,7 @@ const Preloader = ({ delay = 2800, onDone }) => {
           color: "#fff",
         }}
       >
-        Rakesh Sharma Design
+        Rakesh Sharma Designs
       </h1>
       <p
         style={{
