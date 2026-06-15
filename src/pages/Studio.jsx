@@ -73,7 +73,7 @@ const PANELS = {
       { src: 'assets/Comm1.jpeg', title: 'The Bureau Collective', cat: 'Commercial Space', offset: false },
       { src: '/assets/co1.jpeg', title: 'Aura Social Club Lounge', cat: 'Hospitality Hub', },
       { src: 'assets/comm3.jpeg', title: 'Monolith Boutique Showroom', cat: 'Retail Exhibit', offset: false },
-      { src: '/assets/co2.jpeg', title: 'Verdant Concept Lounge', cat: 'Commercial Interior',  },
+      { src: '/assets/commericial01.jpeg', title: 'Verdant Concept Lounge', cat: 'Commercial Interior',  },
     ],
     extra: [
   
@@ -83,12 +83,12 @@ const PANELS = {
     cat: 'Commercial',
   },
   {
-    src: '/assets/co5.jpeg',
+    src: '/assets/comercial02.jpeg',
     title: 'Commercial Space 03',
     cat: 'Commercial',
   },
   { src: 'assets/co6.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial'},
-  { src: 'assets/co7.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
+  { src: 'assets/commercial03.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
  
 
  
