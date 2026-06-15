@@ -89,9 +89,7 @@ const PANELS = {
   },
   { src: 'assets/co6.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial'},
   { src: 'assets/co7.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
-  { src: 'assets/commercialnew1.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
-  { src: 'assets/commercialnew2.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
-  { src: 'assets/commercialnew3.jpeg', title: 'Hillcrest Estate Salon', cat: 'Commercial' },
+ 
 
  
 
