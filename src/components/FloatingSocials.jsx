@@ -48,7 +48,7 @@ export default function FloatingSocials() {
   return (
     <>
       {/* Social Icons */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 flex-col gap-[22px] z-[999] hidden lg:flex">
+      <div className="fixed left-4 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-[999]">
         {SOCIAL_ICONS.map((icon) => (
           <a
             key={icon.name}
